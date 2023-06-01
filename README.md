@@ -1,5 +1,7 @@
 # ACCLERATED_TASK
 
+( IMPORTANT: Paste your mongoDB -> DB_URL inside .env )
+
 1) Clone repo using "git clone https://github.com/Jalaj-Kalra/ACCLERATED_TASK.git"
 2) npm start ( to start node server for backend )
 3) cd client
