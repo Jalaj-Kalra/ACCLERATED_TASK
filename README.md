@@ -3,9 +3,11 @@
 ( IMPORTANT: Paste your mongoDB -> DB_URL inside .env )
 
 1) Clone repo using "git clone https://github.com/Jalaj-Kalra/ACCLERATED_TASK.git"
-2) npm start ( to start node server for backend )
+2) "npm i --legacy-peer-deps" && "npm start" ( to install dependencies start node server for backend )
+Note: All the Libraries are upto date but still we are using --legacy-peer-deps because of express-graphql we can simply change that to
+graphql-http and that will solve the issue but for the graphiql interface i have used old library.
 3) cd client
-4) npm start ( to start frontend server )
+4) "npm i" && "npm start" ( to install dependencies and start frontend server )
 
 
 Part 1: NodeJS ********************************************************************************************
@@ -58,7 +60,7 @@ https://github.com/Jalaj-Kalra/ACCLERATED_TASK/assets/86240969/705e827e-b902-4bb
 
 
 
-
+(For Pretty Graphiql interface just go to http://localhost:8000/graphql )
 Part 4: GraphQL ********************************************************************************************
 1) Create a GraphQL schema that defines the following types:
 • User: id, name, email, password
@@ -68,6 +70,41 @@ Part 4: GraphQL ****************************************************************
 3) Write a GraphQL query that retrieves all users from the database.
 
 Solutions:
+
+
+mutation {
+  createUser (name:"YOUR_NAME",email:"YOUR_EMAIL",password:"YOUR_PASSWORD") {
+    _id,
+    name,
+    email
+  }
+}
+
+{
+  getUserById(_id:"ENTER_VALID_ID") {
+  	_id,
+    name,
+    email
+	}
+}
+
+{
+  getUsers {
+  	_id,
+    name,
+    email
+	}
+}
+
+mutation {
+  deleteUser(_id:"ENTER_VALID_ID"){
+    _id,
+    name
+  }
+}
+
+
+
 
 <img width="1511" alt="Screenshot 2023-06-01 at 5 54 24 PM" src="https://github.com/Jalaj-Kalra/ACCLERATED_TASK/assets/86240969/1eda6870-776f-4bd8-bb6b-1e2f6489a621">
 <img width="1511" alt="Screenshot 2023-06-01 at 5 54 43 PM" src="https://github.com/Jalaj-Kalra/ACCLERATED_TASK/assets/86240969/6e096ddc-0481-437f-a0c5-338d023af323">
